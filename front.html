@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+<style text/css>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+  
+    *{
+        background-color: #FCEDDA";
+    }
+    .container h1 ,label{
+      color:#3A6B35;
+    }
+    .sum{
+        padding:10px;
+    }
+
+  </style>
+<div class="container-fluid px-0 mb-3" >
+    <img src="https://source.unsplash.com/900x300/?phone,contact" class="d-block w-100" alt="...">
+</div>
+<div class="container  mb-3 py-4" style="background-color: #CBD18F">
+    <h1 class="text-center">Contact Us</h1>
+    <form method="post" action="/front">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="name" class="form-label"><h4>Name</h4></label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="form-label"><h4>Email address</h4></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone" class="form-label"><h4>Phone Number</h4></label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="desc"><h4> Tell me about what you want to contact me for...</h4></label>
+            <textarea class="form-control" id="desc" rows="3" name="desc" required >  </textarea>
+        </div> 
+
+        <div class="sum">
+            <button class="btn btn-warning" type="sumit" > Submit </button>🙂🙂
+        </div>
+            {% comment %} <a href="https://facebook.com/sanjay_singh">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        
+        <a href="https://facebook.com/sanjay_singh">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+        </a> 
+        <a href="tel:+9828485625" onclick="GA_FLAG &amp;&amp; ga(&quot;send&quot;, &quot;event&quot;,&quot;call us button Home Page mobile&quot;,&quot;call us button Home Page mobile&quot;, &quot;call us button Home Page mobile&quot;);"><ion-icon name="logo-call"></ion-icon></a>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> {% endcomment %}
+    </form>
+</div>
+{% endblock body %}
